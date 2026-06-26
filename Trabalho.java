@@ -132,7 +132,7 @@ public class Trabalho {
             return;
         }
         String nomePesquisado = IO.readln("Digite o nome do aluno a ser pesquisado: ");
-        int indice = peqsuisarAluno(nomePesquisado);
+        int indice = pesquisarAluno(nomePesquisado, totalAlunos);
         if(indice == -1){
             IO.println("Aluno não encontrado.");
         } else {
@@ -140,9 +140,9 @@ public class Trabalho {
         }
     } 
 
-    int pesquisarAluno(String nomePesquisado){
+    int pesquisarAluno(String nomePesquisado, int quantidade){
         int inicio = 0;
-        int fim = totalAlunos - 1;
+        int fim = quantidade - 1;
         int meio;
         while (inicio <= fim) {
             meio = (inicio + fim) / 2;
